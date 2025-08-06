@@ -38,12 +38,12 @@ A Python tool for extracting vector and raster tiles from MBTiles format map fil
    
    📦 [Download from Google Drive](https://drive.google.com/drive/folders/YOUR_FOLDER_ID)
    
-       **Files included:**
-    
-    - `osm-2020-02-10-v3.11_europe_turkey.mbtiles` (772 MB) ✅ Ready
-    - `satellite-2017-11-02_europe_turkey.mbtiles` (1500 MB) ✅ Ready
-    - `osm-2020-02-10-v3.11_africa.mbtiles` (7400 MB) 🔄 Coming soon
-    - `osm-2020-02-10-v3.11_south-america.mbtiles` (7700 MB) 🔄 Coming soon
+               **Files included:**
+     
+     - `osm-2020-02-10-v3.11_europe_turkey.mbtiles` (772 MB) 🔄 Coming soon
+     - `satellite-2017-11-02_europe_turkey.mbtiles` (1500 MB) 🔄 Coming soon
+     - `osm-2020-02-10-v3.11_africa.mbtiles` (7400 MB) 🔄 Coming soon
+     - `osm-2020-02-10-v3.11_south-america.mbtiles` (7700 MB) 🔄 Coming soon
    
    **Note**: Place all files in the `mbtiles/` directory to match the paths in `config.yaml`.
 
@@ -143,8 +143,8 @@ python local_tile_downloader.py --min-lon -20.0 --min-lat -35.0 --max-lon 55.0 -
 
 | Source ID | Name | Format | Size | Status |
 |-----------|------|--------|------|--------|
-| `osm_turkey` | OpenStreetMap Turkey (Vector) | PBF | 772 MB | ✅ Available |
-| `satellite_turkey` | Satellite Turkey (Raster) | JPG | 1500 MB | ✅ Available |
+| `osm_turkey` | OpenStreetMap Turkey (Vector) | PBF | 772 MB | 🔄 Coming soon |
+| `satellite_turkey` | Satellite Turkey (Raster) | JPG | 1500 MB | 🔄 Coming soon |
 | `osm_africa` | OpenStreetMap Africa (Vector) | PBF | 7400 MB | 🔄 Coming soon |
 | `osm_south_america` | OpenStreetMap South America (Vector) | PBF | 7700 MB | 🔄 Coming soon |
 
