@@ -1,0 +1,17 @@
+# Local Tile Map Downloader Requirements
+# Required packages for extracting tiles from MBTiles files
+
+# Core packages
+pyyaml==6.0.1
+tqdm==4.66.1
+
+# Image processing
+Pillow==10.1.0
+
+# Built-in Python modules (included with Python)
+# sqlite3, pathlib, argparse, math, os, sys, shutil, io, json, logging, abc, typing
+
+# Development dependencies (optional)
+pytest==7.4.3
+black==23.11.0
+flake8==6.1.0 

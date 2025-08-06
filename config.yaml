@@ -1,0 +1,119 @@
+# Local Tile Downloader Configuration
+# Extract tiles from various file formats
+
+# Sources (Different file types)
+sources:
+  # MBTiles sources
+  osm_turkey:
+    path: "mbtiles/osm-2020-02-10-v3.11_europe_turkey.mbtiles"
+    name: "OpenStreetMap Turkey (Vector)"
+    type: "mbtiles"
+    description: "OSM vector tiles for Turkey region"
+    format: "PBF"
+    date: "2020-02-10"
+    size_mb: 772
+    bounds: [25.31, 35.46, 45.00, 42.55]  # [min_lon, min_lat, max_lon, max_lat]
+    min_zoom: 5
+    max_zoom: 13
+  
+  satellite_turkey:
+    path: "mbtiles/satellite-2017-11-02_europe_turkey.mbtiles"
+    name: "Satellite Turkey (Raster)"
+    type: "mbtiles"
+    description: "Satellite raster tiles for Turkey region"
+    format: "JPG"
+    date: "2017-11-02"
+    size_mb: 1500
+    bounds: [25.31, 35.46, 45.00, 42.55]  # [min_lon, min_lat, max_lon, max_lat]
+    min_zoom: 5
+    max_zoom: 13
+  
+  osm_africa:
+    path: "mbtiles/osm-2020-02-10-v3.11_africa.mbtiles"
+    name: "OpenStreetMap Africa (Vector)"
+    type: "mbtiles"
+    description: "OSM vector tiles for Africa region"
+    format: "PBF"
+    date: "2020-02-10"
+    size_mb: 7400
+    bounds: [-20.0, -35.0, 55.0, 37.0]  # [min_lon, min_lat, max_lon, max_lat]
+    min_zoom: 4
+    max_zoom: 12
+  
+  osm_south_america:
+    path: "mbtiles/osm-2020-02-10-v3.11_south-america.mbtiles"
+    name: "OpenStreetMap South America (Vector)"
+    type: "mbtiles"
+    description: "OSM vector tiles for South America region"
+    format: "PBF"
+    date: "2020-02-10"
+    size_mb: 7700
+    bounds: [-85.0, -55.0, -35.0, 12.0]  # [min_lon, min_lat, max_lon, max_lat]
+    min_zoom: 4
+    max_zoom: 12
+
+# Predefined regions
+predefined_regions:
+  turkey_full:
+    name: "Full Turkey"
+    bbox: [25.31, 35.46, 45.00, 42.55] # [min_lon, min_lat, max_lon, max_lat]
+    center: [35.15, 39.0]
+    default_zoom: 5
+    max_zoom: 13
+  
+  turkey_central:
+    name: "Central Turkey"
+    bbox: [30.0, 37.0, 40.0, 40.0]
+    center: [35.0, 38.5]
+    default_zoom: 7
+    max_zoom: 13
+  
+  turkey_west:
+    name: "Western Turkey"
+    bbox: [26.0, 36.5, 35.0, 42.2]
+    center: [30.5, 39.35]
+    default_zoom: 7
+    max_zoom: 13
+  
+  turkey_east:
+    name: "Eastern Turkey"
+    bbox: [35.0, 36.0, 45.0, 42.0]
+    center: [40.0, 39.0]
+    default_zoom: 7
+    max_zoom: 13
+  
+  ankara:
+    name: "Ankara"
+    bbox: [32.5, 39.7, 33.2, 40.1]
+    center: [32.85, 39.9]
+    default_zoom: 10
+    max_zoom: 13
+  
+  istanbul:
+    name: "Istanbul"
+    bbox: [28.0, 40.8, 29.9, 41.5]
+    center: [28.95, 41.15]
+    default_zoom: 9
+    max_zoom: 13
+  
+  izmir:
+    name: "Izmir"
+    bbox: [26.5, 38.0, 27.5, 39.0]
+    center: [27.0, 38.5]
+    default_zoom: 10
+    max_zoom: 13
+  
+  antalya:
+    name: "Antalya"
+    bbox: [30.0, 36.0, 32.0, 37.5]
+    center: [31.0, 36.75]
+    default_zoom: 9
+    max_zoom: 13
+
+# Default settings
+defaults:
+  output_dir: "tiles"
+  min_zoom: 6
+  max_zoom: 13
+  tile_format: "jpg"   # JPG for raster tiles
+  vector_format: "pbf" # PBF for vector tiles
