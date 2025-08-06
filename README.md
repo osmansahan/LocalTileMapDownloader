@@ -1,8 +1,5 @@
 # Local Tile Map Downloader
 
-[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
 A Python tool for extracting vector and raster tiles from MBTiles format map files for specific geographic regions.
 
 ## Features
@@ -25,40 +22,34 @@ A Python tool for extracting vector and raster tiles from MBTiles format map fil
 ### Steps
 
 1. **Clone the repository**
-```bash
-git clone https://github.com/osmansahan/LocalTileMapDownloader.git
-cd LocalTileMapDownloader
-```
+   ```bash
+   git clone https://github.com/osmansahan/LocalTileMapDownloader.git
+   cd LocalTileMapDownloader
+   ```
 
 2. **Install dependencies**
-```bash
-pip install -r requirements.txt
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. **Download MBTiles files**
-Download all MBTiles files from GitHub Releases:
-
-📦 **[Download from GitHub Releases](https://github.com/osmansahan/LocalTileMapDownloader/releases/latest)**
-
-**Files included:**
-- `osm-2020-02-10-v3.11_europe_turkey.mbtiles` (772 MB) ✅ Ready
-- `satellite-2017-11-02_europe_turkey.mbtiles` (1500 MB) ✅ Ready
-- `osm-2020-02-10-v3.11_africa.mbtiles.part*` (4 parts, ~1.5GB each) 🔄 Coming soon
-- `osm-2020-02-10-v3.11_south-america.mbtiles.part*` (4 parts, ~1.5GB each) 🔄 Coming soon
-
-**After downloading, merge the split files:**
-```bash
-# Merge Africa file
-cat osm-2020-02-10-v3.11_africa.mbtiles.part* > osm-2020-02-10-v3.11_africa.mbtiles
-
-# Merge South America file
-cat osm-2020-02-10-v3.11_south-america.mbtiles.part* > osm-2020-02-10-v3.11_south-america.mbtiles
-```
-
-**Note:** Place all files in the `mbtiles/` directory to match the paths in `config.yaml`.
+   
+   Download all MBTiles files from Google Drive:
+   
+   📦 [Download from Google Drive](https://drive.google.com/drive/folders/YOUR_FOLDER_ID)
+   
+       **Files included:**
+    
+    - `osm-2020-02-10-v3.11_europe_turkey.mbtiles` (772 MB) ✅ Ready
+    - `satellite-2017-11-02_europe_turkey.mbtiles` (1500 MB) ✅ Ready
+    - `osm-2020-02-10-v3.11_africa.mbtiles` (7400 MB) 🔄 Coming soon
+    - `osm-2020-02-10-v3.11_south-america.mbtiles` (7700 MB) 🔄 Coming soon
+   
+   **Note**: Place all files in the `mbtiles/` directory to match the paths in `config.yaml`.
 
 4. **Check configuration**
-The `config.yaml` file contains sources, boundaries, and predefined regions.
+   
+   The `config.yaml` file contains sources, boundaries, and predefined regions.
 
 ## Quick Start
 
@@ -92,15 +83,15 @@ python local_tile_downloader.py --min-lon 32.5 --min-lat 39.7 --max-lon 33.2 --m
 
 ### Usage Methods
 
-#### 1. Predefined Regions
-```bash
-python local_tile_downloader.py --region <region_name> --source <source> [--min-zoom <level>] [--max-zoom <level>]
-```
+1. **Predefined Regions**
+   ```bash
+   python local_tile_downloader.py --region <region_name> --source <source> [--min-zoom <level>] [--max-zoom <level>]
+   ```
 
-#### 2. Custom Coordinates
-```bash
-python local_tile_downloader.py --min-lon <min_lon> --min-lat <min_lat> --max-lon <max_lon> --max-lat <max_lat> --source <source> [--min-zoom <level>] [--max-zoom <level>] [--region-name <name>]
-```
+2. **Custom Coordinates**
+   ```bash
+   python local_tile_downloader.py --min-lon <min_lon> --min-lat <min_lat> --max-lon <max_lon> --max-lat <max_lat> --source <source> [--min-zoom <level>] [--max-zoom <level>] [--region-name <name>]
+   ```
 
 ### Parameters
 
@@ -116,9 +107,10 @@ python local_tile_downloader.py --min-lon <min_lon> --min-lat <min_lat> --max-lo
 
 **Note**: If you don't specify zoom levels, the tool will automatically use the source's default zoom range. You can override this by specifying custom zoom levels within the source boundaries.
 
-### Example Commands
+## Example Commands
 
-#### Using Predefined Regions
+### Using Predefined Regions
+
 ```bash
 # OSM vector tiles for Ankara
 python local_tile_downloader.py --region ankara --source osm_turkey
@@ -130,7 +122,8 @@ python local_tile_downloader.py --region istanbul --source satellite_turkey --mi
 python local_tile_downloader.py --region turkey_full --source osm_turkey --min-zoom 5 --max-zoom 8
 ```
 
-#### Using Custom Coordinates
+### Using Custom Coordinates
+
 ```bash
 # OSM vector tiles for Ankara
 python local_tile_downloader.py --min-lon 32.5 --min-lat 39.7 --max-lon 33.2 --max-lat 40.1 --source osm_turkey
@@ -146,19 +139,21 @@ python local_tile_downloader.py --min-lon -20.0 --min-lat -35.0 --max-lon 55.0 -
 
 ### Required MBTiles Files
 
-**Important:** You need to download these MBTiles files separately and place them in the `mbtiles/` directory before using the tool.
+**Important**: You need to download these MBTiles files separately and place them in the `mbtiles/` directory before using the tool.
 
 | Source ID | Name | Format | Size | Status |
 |-----------|------|--------|------|--------|
 | `osm_turkey` | OpenStreetMap Turkey (Vector) | PBF | 772 MB | ✅ Available |
 | `satellite_turkey` | Satellite Turkey (Raster) | JPG | 1500 MB | ✅ Available |
-| `osm_africa` | OpenStreetMap Africa (Vector) | PBF | 7400 MB | ✅ Available |
-| `osm_south_america` | OpenStreetMap South America (Vector) | PBF | 7700 MB | ✅ Available |
+| `osm_africa` | OpenStreetMap Africa (Vector) | PBF | 7400 MB | 🔄 Coming soon |
+| `osm_south_america` | OpenStreetMap South America (Vector) | PBF | 7700 MB | 🔄 Coming soon |
 
-**📁 Download all files:** [GitHub Releases](https://github.com/osmansahan/LocalTileMapDownloader/releases/latest)
+📁 [Download all files: Google Drive](https://drive.google.com/drive/folders/YOUR_FOLDER_ID)
 
 ### File Structure
+
 After downloading, your `mbtiles/` directory should look like this:
+
 ```
 mbtiles/
 ├── osm-2020-02-10-v3.11_europe_turkey.mbtiles
@@ -170,7 +165,7 @@ mbtiles/
 ### Source Boundaries and Zoom Levels
 
 | Source ID | Boundary Coordinates (Min Lon, Min Lat, Max Lon, Max Lat) | Zoom Levels | Coverage |
-|-----------|---------------------------------------------------|-------------|----------|
+|-----------|------------------------------------------------------------|-------------|----------|
 | `osm_turkey` | 25.31°E, 35.46°N - 45.00°E, 42.55°N | 5 - 13 | Turkey |
 | `satellite_turkey` | 25.31°E, 35.46°N - 45.00°E, 42.55°N | 5 - 13 | Turkey |
 | `osm_africa` | 20.0°W, 35.0°S - 55.0°E, 37.0°N | 4 - 12 | Africa |
@@ -280,10 +275,10 @@ python local_tile_downloader.py --validate-config
 
 ## Dependencies
 
-- **pyyaml**: YAML configuration file processing
-- **tqdm**: Progress bar
-- **Pillow**: Image processing
-- **sqlite3**: MBTiles database processing (Python built-in)
+- `pyyaml`: YAML configuration file processing
+- `tqdm`: Progress bar
+- `Pillow`: Image processing
+- `sqlite3`: MBTiles database processing (Python built-in)
 
 ## License
 
@@ -292,7 +287,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For issues and questions, please open an issue on GitHub.
-
----
 
 **Note**: This project only provides tile generation functionality. To view the generated tiles, you need to use map servers or web applications. 
