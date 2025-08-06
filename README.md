@@ -36,10 +36,8 @@ A Python tool for extracting vector and raster tiles from MBTiles format map fil
    
    Download all MBTiles files from Google Drive:
    
-   📦 [Download from Google Drive](https://drive.google.com/drive/folders/YOUR_FOLDER_ID)
+   📦 [Download from Google Drive](https://drive.google.com/drive/folders/YOUR_FOLDER_ID) (Not Ready)
    
-               **Files included:**
-     
      - `osm-2020-02-10-v3.11_europe_turkey.mbtiles` (772 MB) 🔄 Coming soon
      - `satellite-2017-11-02_europe_turkey.mbtiles` (1500 MB) 🔄 Coming soon
      - `osm-2020-02-10-v3.11_africa.mbtiles` (7400 MB) 🔄 Coming soon
@@ -289,3 +287,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For issues and questions, please open an issue on GitHub.
 
 **Note**: This project only provides tile generation functionality. To view the generated tiles, you need to use map servers or web applications. 
+
